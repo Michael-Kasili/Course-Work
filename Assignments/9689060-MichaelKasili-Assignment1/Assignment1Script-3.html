@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+
+
+<body>
+
+    <script>
+        function oddCount() {
+
+            var arr = {};
+            var count = 0;
+            //will ask for user input 100 times, which is fairly enough//
+            for (i = 0; i < 100; i++) {
+                arr[i] = Number(prompt("Enter number " + (Number(i))));
+            }
+
+            var oddNums = "<br>Odd Numbers: <br>";
+
+            for (i = 0; i < 100; i++) {
+                // Divide i by 2
+                // If modulus is 1, then it's an Odd number
+                if (arr[i] % 2 == 1) {
+                    oddNums += arr[i] + "<br>";
+                    count = count + arr[i];
+                }
+            }
+            //print the values
+            document.write(oddNums, "Odd number count = " +
+                count);
+        }
+        oddCount();
+    </script>
+
+</body>
+
+</html>

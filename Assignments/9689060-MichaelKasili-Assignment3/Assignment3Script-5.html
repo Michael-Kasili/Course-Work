@@ -1,0 +1,115 @@
+//Question 5
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Question 5</title>
+    <script language="JavaScript">
+        function checkRequired() { //User input will be validated using this function,
+            //first to check if the input is empty then check if the 'space key' was used to fill the fields using 'trim'
+            let a = document.forms["RegistrationForm"]["firstName"].value;
+            if (a.trim() == "" || a.length < 2) { //'a.length' checks length of input, it can adjusted accordingly
+                alert("Missing First Name"); //If a form field (fname) is empty, either 'Alert messages' or 
+                //the 'required' attribute prevents this form from being submitted
+                return false;
+            }
+            let b = document.forms["RegistrationForm"]["lastName"].value;
+            if (b.trim() == "" || b.length < 2) {
+                alert("Missing Last Name"); //It is not neccessary to write all this code, it is just for explanatory purposes
+                return false;
+            }
+            let c = document.forms["RegistrationForm"]["dob"].value;
+            if (c.trim() == "" || c.length < 2) { //The 'required' attribute checks for proper date format
+                alert("Missing Date of Birth");
+                return false;
+            }
+            let d = document.forms["RegistrationForm"]["address"].value;
+            if (d.trim() == "" || d.length < 5) {
+                alert("Missing Physical Address");
+                return false;
+            }
+            let e = document.forms["RegistrationForm"]["town"].value;
+            if (e.trim() == "" || e.length < 2) {
+                alert("Missing Town Name");
+                return false;
+            }
+            let f = document.forms["RegistrationForm"]["county"].value;
+            if (f.trim() == "" || f.length < 2) {
+                alert("Missing County Name");
+                return false;
+            }
+            let g = document.forms["RegistrationForm"]["postcode"].value;
+            if (g.trim() == "" || g.length < 2) {
+                alert("Missing Postal Code");
+                return false;
+            }
+            let h = document.forms["RegistrationForm"]["email"].value;
+            if (h.trim() == "" || h.length < 2) { //The 'required' attribute checks for email validity. It checks for '@' or '.com' 
+                alert("Missing Email Address");
+                return false;
+            } else {
+                true;
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>Question 5</h1>
+    <form id="user-form" action="#" name=RegistrationForm method="post" onsubmit="return checkRequired()">
+        <table>
+            <tr>
+                <td>*Title:</td>
+                <td><select name="title">
+                  <option selected>Mr</option>
+                  <option>Mrs</option>
+                  <option>Ms</option>
+                  <option>Miss</option>
+                  <option>Dr</option>
+                  <option>Prof</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td>First name:</td>
+                <!--'required' attribute is included in all the fields-->
+                <td><input type="text" id="firstname" name="firstName" size="20" maxlength="20" placeholder="First Name" required></td>
+            </tr>
+            <tr>
+                <td>Last name:</td>
+                <td><input type="text" id="lastname" name="lastName" size="20" maxlength="20" placeholder="Last Name" required></td>
+            </tr>
+            <tr>
+                <td>Date of Birth:</td>
+                <td><input type="date" id="dob" name="dob" size="20" maxlength="20" placeholder="Date of Birth" required></td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td><textarea id="address" name="address" row="4" , cols="40" placeholder="Physical Address" required></textarea></td>
+            </tr>
+            <tr>
+                <td>Town:</td>
+                <td><input type="text" id="town" name="town" size="30" maxlength="40" placeholder="Town" required></td>
+            </tr>
+            <tr>
+                <td>County:</td>
+                <td><input type="text" id="county" name="county" size="30" maxlength="40" placeholder="County" required></td>
+            </tr>
+            <tr>
+                <td>Postcode:</td>
+                <td><input type="text" id="postcode" name="postcode" size="20" maxlength="10" placeholder="Postcode" required></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="email" id="email" name="email" size="30" maxlength="64" placeholder="Email Address" required></td>
+            </tr>
+        </table>
+        <div>
+
+            <input type="submit" value="Submit" onClick="checkRequired()">
+        </div>
+    </form>
+</body>
+
+</html>

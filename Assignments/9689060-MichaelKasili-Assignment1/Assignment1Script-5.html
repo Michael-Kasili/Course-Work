@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+
+<body>
+
+
+    <button onclick="printPrimeNums()">Generate Prime Numbers</button>
+    <script>
+        function printPrimeNums() {
+
+
+            var PrimeNums;
+            //prime numbers will start from 100 to (including)9999//
+            for (var i = 100; i <= 9999; i++) {
+                PrimeNums = 1;
+
+                for (var m = 2; m <= i / 2; m++) {
+                    if (i % m == 0) {
+                        PrimeNums = 0;
+                        break;
+                    }
+                }
+                if (PrimeNums == 1) {
+                    document.write(i + "<br>");
+                }
+
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+
+
+<body>
+
+    <script>
+        var arr = {};
+        var sum = 0,
+            i;
+        //will ask user to type in number 50 times//
+        for (i = 0; i < 50; i++) {
+            arr[i] = Number(prompt("Enter number " + (Number(i))));
+
+            //will calculate sum of numbers over 40//
+            if (arr[i] >= 40) {
+                sum += arr[i];
+            } else if (arr[i] < 40); {
+                continue;
+            }
+        }
+        document.write('Sum of numbers over 40 is ' + sum);
+    </script>
+</body>
+
+</html>

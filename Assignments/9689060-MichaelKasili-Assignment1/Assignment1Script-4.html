@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+
+<body>
+
+    <script>
+        // User input//
+        const number = parseInt(prompt('Generate how many Fibonacci terms? '));
+        let m1 = 0,
+            m2 = 1,
+            nextTerm;
+
+        document.write('Fibonacci numbers:' + "<br>");
+
+        for (let i = 1; i <= number; i++) {
+            document.write(m1 + "<br>");
+            nextTerm = m1 + m2;
+            m1 = m2;
+            m2 = nextTerm;
+        }
+    </script>
+</body>
+
+</html>

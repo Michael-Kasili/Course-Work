@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+
+
+<body>
+
+    <script>
+        var arr = [];
+        // Array must be defined inorder to show output
+        function bubbleSort(arr) {
+            var i, q, last;
+            //last is the last digit of the array
+            for (i = 0; i < 10; i++) {
+                arr[i] = Number(prompt("Enter number " + (Number(i))));
+            }
+            //Above code will prompt user to input 10 numbers
+            last = arr.length;
+            while (last--) {
+                // Array length is 10 but  will decrement by 1 once it enters while loop
+                for (i = 0, q = 1; i < last; i++, q++)
+                //'i and m' will be used to compare digits, 'last' will be used to limit the number of loops
+                    if (arr[i] > arr[q]) {
+                        temp = arr[i];
+                        arr[i] = arr[q];
+                        arr[q] = temp;
+                    }
+                    //if statement will analyse numbers according to ascending order
+            }
+            return arr;
+        }
+        document.write("Numbers in ascending order = " + bubbleSort(arr));
+    </script>
+
+</body>
+
+</html>

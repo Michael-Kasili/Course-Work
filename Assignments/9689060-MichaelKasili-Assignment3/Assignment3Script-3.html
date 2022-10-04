@@ -1,0 +1,43 @@
+//Question 3
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Question 3</title>
+
+</head>
+
+<body>
+    <h1>Question 3</h1>
+    <p id="demo"></p>
+
+    <script>
+        //These are two methods write this code, since it is the same string
+        //Method 1
+        //An Array constructor can be used to make the list
+        for (let i = 1; i <= 50; i++) {
+            const item = 'item' + [i]
+            const arr = Array.from({
+                length: 1
+            }, () => item)
+            console.log('arr', arr) //Output on console
+                //'document.write(arr + "<br/>")'. The output will can be ordered in a list with list tags
+        }
+        //For loop is an easier way to generate the item list since it's the same string
+        //But for different strings, the object constructor function should be used 
+        //Also the .push or .unshift methods are used to add new items to an array
+        //Method 2
+        let text = "<ul>";
+
+        for (let i = 1; i <= 50; i++) { //Second 'for' loop is to explain and compute second method 
+            text += "<li>" + "Item" + [i] + "</li>";
+        }
+        text += "</ul>";
+        //This output will be ordered in a list on webpage
+        document.getElementById("demo").innerHTML = text;
+    </script>
+
+</body>
+
+</html>

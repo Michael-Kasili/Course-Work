@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+
+<body>
+
+    <script>
+        function printEvenNums() {
+            var sum = 0;
+            var arr = {};
+            for (i = 0; i < 20; i++) {
+                arr[i] = Number(prompt("Enter number " + (Number(i))));
+            }
+
+            var evenNums = "<br>Even Numbers: <br>";
+
+            for (i = 0; i < 20; i++) {
+                // Divide i by 2
+                // If modulus is 0, then it's an Even number
+                if (arr[i] % 2 == 0) {
+                    evenNums += arr[i] + "<br>";
+                    sum = sum + arr[i];
+                }
+            }
+            //Print even numbers
+            document.write(evenNums, "Sum of even numbers = " + sum);
+        }
+        printEvenNums();
+    </script>
+
+</body>
+
+</html>

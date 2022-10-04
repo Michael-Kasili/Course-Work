@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+    <script>
+        var generateAnagrams = (word, anagram = '', anagrams = []) => {
+                if (anagram) {
+                    anagrams.push(anagram);
+                }
+
+                //push will add a letter to the end of the array and returns new length 
+                if (!word) {
+                    return;
+                }
+                //!word means if word is false, there will be no execution of the anagram
+                for (let i = 0; i < word.length; i++) {
+
+                    anagram += word[i];
+                    generateAnagrams(word.slice(0, i) + word.slice(i + 1), anagram, anagrams);
+                    anagram = anagram.slice(0, anagram.length - 1);
+
+                }
+                // slice will return selected elements/letters in the array
+
+                let uniq = [...new Set(anagrams.sort())];
+                return uniq;
+            }
+            //'New Set' will arrange the string by (0, 0+1, 0+1+2), 'sort' will print combinations of STR in lexicographical order
+
+        console.log(generateAnagrams('STR'));
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+//Question 4
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Question 4</title>
+
+</head>
+
+<body>
+    <h1>Question 4</h1>
+
+    <p id="demo"></p>
+
+    <script>
+        function trueorfalse() { //Function name
+            var arr = {};
+
+            //will ask user to type in number 50 times//
+            for (i = 1; i < 5; i++) {
+                arr[i] = Number(prompt("Enter number " + (Number(i)))); //prompt will ask for inputs
+            }
+            //parseFloat will return numbers. NaN will appear for other inputs
+            var a = parseFloat(arr[1])
+            var b = parseFloat(arr[2])
+            var c = parseFloat(arr[3])
+            var d = parseFloat(arr[4])
+            document.getElementById("demo").innerHTML = //This will display inputs after computation
+                "Input a is: " + a + "<br/>" +
+                "Input b is: " + b + "<br/>" +
+                "Input c is: " + c + "<br/>" +
+                "Input d is: " + d;
+            if (a * b < c * d) { //If evaluates the conditon. If it is true, alert box will pop up with True
+                alert(true)
+            } else { //or else alert box will be false 
+                alert(false)
+            }
+
+        }
+    </script>
+    <button onclick="trueorfalse()">Compute</button>
+    <!--This will call function-->
+</body>
+
+</html>

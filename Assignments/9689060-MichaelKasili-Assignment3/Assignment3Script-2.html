@@ -1,0 +1,38 @@
+//Question 2
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Question 2</title>
+    <script type="text/javascript">
+        //This function can be used to input User first and second names then output. More functionality like object constructor can be added to store this data
+        function display() { //Function connected to the button is called whenever the user clicks the mouse
+            document.getElementById('display').innerHTML =
+                document.getElementById("user_input1").value; //User input in the first form will be output
+            document.getElementById('display1').innerHTML =
+                document.getElementById("user_input2").value; //User input in the second form will be output
+        }
+
+        function highlight(x) { //This will highlight each field yellow when clicked
+            x.style.background = "yellow";
+        }
+        //If data is selected from form fill data instead of typed data, highlighter will only work when any keyboard key is pressed
+        function regular(x) { //This will return form to regular color while other form is clicked
+            x.style.background = "white";
+        }
+    </script>
+</head>
+
+<body>
+    <!--Add id to input tag-->
+    <h1>Question 2</h1>
+    <form name="exam">
+        <!--form validation can be added for different types of data-->
+        <input type="text" name="first" id="user_input1" onmousedown="highlight(this)" onblur="regular(this)">
+        <input type="text" name="last" id="user_input2" onmousedown="highlight(this)" onblur="regular(this)">
+        <input type="button" value="click me" onClick="display()">
+    </form>
+    <p><span id='display'></span> <span id='display1'></span></p>
+</body>
+
+</html>

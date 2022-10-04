@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <script>
+        var numbers = [10, 45, 20, 18, 35, 30];
+
+        var final_numbers = numbers.slice(2);
+
+        var max = final_numbers[0];
+
+        for (var i = 1; i < final_numbers.length; i++) {
+
+            if (max < final_numbers[i])
+
+                max = final_numbers[i];
+
+        }
+
+        document.write("Maximum value= " + max);
+    </script>
+
+</body>
+
+</html>
